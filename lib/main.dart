@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: NavigationScreen(
-        currentIndex: 3,
+        currentIndex: 0,
       ),
     );
   }
