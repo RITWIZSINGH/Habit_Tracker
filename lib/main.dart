@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors, use_super_parameters, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:habit_tracker_app/pages/loginPage.dart';
 import 'package:habit_tracker_app/screens/nav_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -22,10 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      home: NavigationScreen(
-        currentIndex: 0,
-      ),
+      home: LoginScreen()
     );
   }
 }
