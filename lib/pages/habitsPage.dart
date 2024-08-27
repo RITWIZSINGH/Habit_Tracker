@@ -1,12 +1,13 @@
-// ignore_for_file: must_be_immutable, use_key_in_widget_constructors, use_super_parameters, file_names, prefer_const_constructors, sized_box_for_whitespace, unused_import
+// ignore_for_file: must_be_immutable, use_key_in_widget_constructors, use_super_parameters, file_names, prefer_const_constructors, sized_box_for_whitespace, unused_import, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:habit_tracker_app/services/chartsBuilder.dart';
+
 class HabitsPage extends StatefulWidget {
   const HabitsPage({Key? key}) : super(key: key);
 
   @override
-  State<HabitsPage> createState() => _HabitsPageState();
+  State createState() => _HabitsPageState();
 }
 
 class _HabitsPageState extends State<HabitsPage> {
@@ -26,25 +27,29 @@ class _HabitsPageState extends State<HabitsPage> {
                   padding: EdgeInsets.fromLTRB(20, 140, 0, 20),
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Column(children: const [
-                      Text(
-                        "Your Habits",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        "Use this to be inspired",
-                        style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white),
-                      ),
-                    ]),
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      color: Colors.black.withOpacity(0.5), // Background color
+                      child: Column(children: const [
+                        Text(
+                          "Your Habits",
+                          style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Use this to be inspired",
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
+                      ]),
+                    ),
                   ),
                 )
               ]),
@@ -54,7 +59,6 @@ class _HabitsPageState extends State<HabitsPage> {
             height: 513,
             child: ListView(
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-              // ignore: prefer_const_literals_to_create_immutables
               children: [
                 SizedBox(
                   height: 200,
