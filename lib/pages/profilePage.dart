@@ -28,9 +28,9 @@ class _ProfilePageState extends State<ProfilePage> {
             padding: EdgeInsets.only(top: 25, bottom: 10),
             child: const Center(
                 child: Text(
-              "Hey Hermano!",
+              "Hey RITWIZ!",
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 22,
                   fontWeight: FontWeight.bold),
             )),
@@ -39,7 +39,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Text(
             "What a wonderful day!!",
             style: TextStyle(
-                color: Colors.black, fontSize: 16, fontWeight: FontWeight.w400),
+                color: Colors.white, fontSize: 16, fontWeight: FontWeight.w400),
           )),
           Padding(
             padding: EdgeInsets.all(10),

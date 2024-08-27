@@ -1,5 +1,4 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors, use_super_parameters, file_names, prefer_const_constructors, sort_child_properties_last, avoid_print, curly_braces_in_flow_control_structures
-
 import 'package:flutter/material.dart';
 import 'package:habit_tracker_app/services/lists.dart';
 
@@ -12,6 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int counter = 0;
+  bool isDarkMode = false; // Toggle for dark mode
+
   @override
   Widget build(BuildContext context) {
     void addToHabitList(String habitName, String habitDescription) {
@@ -78,7 +79,7 @@ class _HomePageState extends State<HomePage> {
           addHabit(context);
         }),
       ),
-      backgroundColor: Colors.grey[100],
+      backgroundColor: isDarkMode ? Colors.grey[900] : Colors.grey[100],
       body: ListView(padding: EdgeInsets.zero, children: [
         Padding(
           padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
@@ -90,25 +91,31 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.fromLTRB(20, 140, 0, 20),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Column(children: [
-                    Text(
-                      "Hey Hermano!",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "You have ${habitList.length - counter} habits left for today",
-                      style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.white),
-                    ),
-                  ]),
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    color: isDarkMode
+                        ? Colors.black.withOpacity(0.7)
+                        : Colors.black.withOpacity(0.3), // Background color
+                    child: Column(children: [
+                      Text(
+                        "Hey RITWIZ!",
+                        style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: isDarkMode ? Colors.white : Colors.white),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "You have ${habitList.length - counter} habits left for today",
+                        style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w400,
+                            color: isDarkMode ? Colors.white : Colors.white),
+                      ),
+                    ]),
+                  ),
                 ),
               )
             ]),
@@ -116,14 +123,25 @@ class _HomePageState extends State<HomePage> {
         ),
         Container(
           width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
+          decoration: BoxDecoration(
+              color: isDarkMode ? Colors.black : Colors.white,
+              borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30), topRight: Radius.circular(30))),
           child: Padding(
             padding: EdgeInsets.all(10),
             child: Column(
               children: [
+                SwitchListTile(
+                  title: Text('Dark Mode',
+                      style: TextStyle(
+                          color: isDarkMode ? Colors.white : Colors.black)),
+                  value: isDarkMode,
+                  onChanged: (value) {
+                    setState(() {
+                      isDarkMode = value;
+                    });
+                  },
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
                   child: Row(
@@ -131,11 +149,17 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Text(
                         "Keep Going!",
-                        style: TextStyle(color: Colors.grey[600], fontSize: 16),
+                        style: TextStyle(
+                            color:
+                                isDarkMode ? Colors.white70 : Colors.grey[600],
+                            fontSize: 16),
                       ),
                       Text("${((counter / habitList.length) * 100).round()}%",
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 16))
+                          style: TextStyle(
+                              color: isDarkMode
+                                  ? Colors.white70
+                                  : Colors.grey[600],
+                              fontSize: 16))
                     ],
                   ),
                 ),
@@ -161,8 +185,16 @@ class _HomePageState extends State<HomePage> {
                     itemCount: habitList.length,
                     itemBuilder: (context, int index) {
                       return ListTile(
-                          title: Text(habitList[index][1]),
-                          subtitle: Text(habitList[index][2]),
+                          title: Text(habitList[index][1],
+                              style: TextStyle(
+                                  color: isDarkMode
+                                      ? Colors.white
+                                      : Colors.black)),
+                          subtitle: Text(habitList[index][2],
+                              style: TextStyle(
+                                  color: isDarkMode
+                                      ? Colors.white70
+                                      : Colors.black87)),
                           trailing: habitList[index][3],
                           leading: Checkbox(
                             value: habitList[index][0],
@@ -170,11 +202,9 @@ class _HomePageState extends State<HomePage> {
                               setState(() {
                                 if (value == false) {
                                   counter -= 1;
-                                  print(counter.toString());
                                   habitList[index][0] = value;
                                 } else
                                   counter += 1;
-                                print(counter.toString());
                                 habitList[index][0] = value;
                               });
                             }),
@@ -185,7 +215,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-        )
+        ),
       ]),
     );
   }
