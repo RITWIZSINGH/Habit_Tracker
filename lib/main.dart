@@ -6,6 +6,7 @@ import 'package:habit_tracker_app/screens/nav_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:habit_tracker_app/utilities/customScheme.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,9 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: NavigationScreen(
-        currentIndex: 0,
-      )
+      home: KeyboardVisibilityProvider(child: LoginScreen())
     );
   }
 }

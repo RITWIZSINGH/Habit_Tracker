@@ -6,6 +6,7 @@ import 'package:habit_tracker_app/screens/nav_screen.dart';
 import 'package:habit_tracker_app/utilities/customContainer.dart';
 import 'package:habit_tracker_app/utilities/customScheme.dart';
 import 'registrationPage.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -42,6 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppTheme.primaryColor,
       body: SafeArea(
         child: Column(
@@ -54,16 +56,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 fontSize: 24, 
                 fontWeight: FontWeight.bold,
                 color: AppTheme.surfaceColor,
-                fontFamily: "NexaBold"
               ),
               textAlign: TextAlign.center,
             ),
             Text(
-              'Inventory Manager',
+              'Improve ur daily Life',
               style: TextStyle(
                 fontSize: 16,
                 color: AppTheme.surfaceColor,
-                fontFamily: "NexaRegular"
               ),
               textAlign: TextAlign.center,
             ),

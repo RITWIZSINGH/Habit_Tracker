@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_const_constructors, use_super_parameters, file_names, avoid_print, use_build_context_synchronously, unused_import, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, use_super_parameters, file_names, avoid_print, use_build_context_synchronously, unused_import, sort_child_properties_last, unused_local_variable
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:habit_tracker_app/screens/nav_screen.dart';
 import 'package:habit_tracker_app/utilities/customContainer.dart';
 import 'package:habit_tracker_app/utilities/customScheme.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -52,6 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppTheme.primaryColor,
       body: SafeArea(
         child: Column(
@@ -68,7 +70,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               textAlign: TextAlign.center,
             ),
             Text(
-              'Inventory Manager',
+              'Improve ur daily life',
               style: TextStyle(
                 fontSize: 16, 
                 fontFamily: "NexaRegular",

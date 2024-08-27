@@ -38,6 +38,7 @@ dependencies:
   fl_chart: ^0.68.0
   firebase_core: ^3.4.0
   firebase_auth: ^5.2.0
+  flutter_keyboard_visibility: ^6.0.0
 
 dev_dependencies:
   flutter_test:
