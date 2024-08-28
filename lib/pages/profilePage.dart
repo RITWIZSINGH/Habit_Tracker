@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_super_parameters, file_names, avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:habit_tracker_app/pages/loginPage.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -72,7 +73,8 @@ class _ProfilePageState extends State<ProfilePage> {
           Center(
             child: TextButton(
               onPressed: (() {
-                print("User logged out");
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
               }),
               child: Text(
                 "Log Out",

@@ -33,7 +33,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.white,
         selectedItemColor: AppTheme.accentColor,
         currentIndex: widget.currentIndex,
         onTap: (index) {
