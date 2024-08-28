@@ -61,11 +61,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             SizedBox(height: 40),
             Text(
-              'ROBOSOC',
+              'HABIT TRACKER',
               style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  fontFamily: "NexaBold",
                   color: AppTheme.surfaceColor),
               textAlign: TextAlign.center,
             ),
@@ -73,7 +72,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               'Improve ur daily life',
               style: TextStyle(
                 fontSize: 16, 
-                fontFamily: "NexaRegular",
                 color: AppTheme.surfaceColor
               ),
               textAlign: TextAlign.center,
@@ -142,7 +140,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.surfaceColor,
+                        fillColor: AppTheme.textColor,
                         filled: true,
                       ),
                       validator: (value) {
@@ -161,7 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.surfaceColor,
+                        fillColor: AppTheme.textColor,
                         filled: true,
                       ),
                       validator: (value) {
@@ -180,7 +178,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.surfaceColor,
+                        fillColor: AppTheme.textColor,
                         filled: true,
                       ),
                       validator: (value) {

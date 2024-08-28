@@ -118,7 +118,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontSize: 18, 
                         fontWeight: FontWeight.bold,
                         color: AppTheme.textColor,
-                        fontFamily: "NexaRegular"
                       ),
                     ),
                     SizedBox(height: 20),
@@ -129,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.surfaceColor,
+                        fillColor: AppTheme.textColor,
                         filled: true,
                       ),
                       validator: (value) {
@@ -148,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.surfaceColor,
+                        fillColor: AppTheme.textColor,
                         filled: true,
                       ),
                       validator: (value) {
