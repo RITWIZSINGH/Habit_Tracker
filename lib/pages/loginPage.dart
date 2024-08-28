@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
             )));
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Login failed: ${e.toString()}')),
+          SnackBar(content: Text('Please register first to Login with your credentials')),
         );
       }
     }
@@ -128,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.textColor,
+                        fillColor: AppTheme.darkTheme.colorScheme.surface,
                         filled: true,
                       ),
                       validator: (value) {
@@ -147,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.textColor,
+                        fillColor: AppTheme.darkTheme.colorScheme.surface,
                         filled: true,
                       ),
                       validator: (value) {

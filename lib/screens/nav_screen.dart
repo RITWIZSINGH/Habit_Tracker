@@ -6,6 +6,7 @@ import 'package:habit_tracker_app/pages/homePage.dart';
 import 'package:habit_tracker_app/pages/habitsPage.dart';
 import 'package:habit_tracker_app/pages/profilePage.dart';
 import 'package:habit_tracker_app/pages/progressPage.dart';
+import 'package:habit_tracker_app/utilities/customScheme.dart';
 
 
 class NavigationScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.deepPurpleAccent,
+        selectedItemColor: AppTheme.accentColor,
         currentIndex: widget.currentIndex,
         onTap: (index) {
           setState(() {

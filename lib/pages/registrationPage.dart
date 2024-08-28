@@ -140,7 +140,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.textColor,
+                        fillColor: AppTheme.darkTheme.colorScheme.surface,
                         filled: true,
                       ),
                       validator: (value) {
@@ -159,7 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.textColor,
+                        fillColor: AppTheme.darkTheme.colorScheme.surface,
                         filled: true,
                       ),
                       validator: (value) {
@@ -178,7 +178,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        fillColor: AppTheme.textColor,
+                        fillColor: AppTheme.darkTheme.colorScheme.surface,
                         filled: true,
                       ),
                       validator: (value) {

@@ -24,7 +24,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: KeyboardVisibilityProvider(child: LoginScreen())
+      home: KeyboardVisibilityProvider(child: NavigationScreen(
+        currentIndex: 0,
+      ))
     );
   }
 }
